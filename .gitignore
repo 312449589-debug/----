@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Cloudflare / wrangler
+.wrangler/
+.dev.vars
+
+# 依赖
+node_modules/
+
+# 编辑器
+.vscode/
+.idea/

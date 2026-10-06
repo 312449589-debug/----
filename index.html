@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ming · 会写代码的设计师</title>
+<meta name="description" content="Ming 的个人网站 —— 一个会写代码、也会画画的设计师。像素 · 可爱 · 轻松。" />
+<meta name="theme-color" content="#FFE3F0" />
+
+<!-- 像素小爱心 favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Crect width='8' height='8' fill='%23FFF6E5'/%3E%3Cg fill='%23FF7FB2'%3E%3Crect x='1' y='2' width='2' height='1'/%3E%3Crect x='5' y='2' width='2' height='1'/%3E%3Crect x='0' y='3' width='8' height='1'/%3E%3Crect x='0' y='4' width='8' height='1'/%3E%3Crect x='1' y='5' width='6' height='1'/%3E%3Crect x='2' y='6' width='4' height='1'/%3E%3Crect x='3' y='7' width='2' height='1'/%3E%3C/g%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ========== 背景装饰：糖果渐变 + 气泡 ========== -->
+<div class="bg-decor" id="bgDecor" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!-- ========== 导航 ========== -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="logo">
+      <span class="logo-mark">M</span>
+      <span class="logo-text">MING</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="主导航">
+      <a href="#home"    class="nav-link is-active">首页</a>
+      <a href="#about"   class="nav-link">关于</a>
+      <a href="#skills"  class="nav-link">技能</a>
+      <a href="#works"   class="nav-link">作品</a>
+      <a href="#hobbies" class="nav-link">日常</a>
+      <a href="#contact" class="nav-link">联系</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ========== 首页 Hero ========== -->
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+
+      <div class="hero-visual">
+        <div class="avatar-frame" id="avatarFrame" title="点我一下试试～">
+          <canvas id="pixelAvatar" width="384" height="384" aria-label="Ming 的像素猫猫头像"></canvas>
+        </div>
+        <span class="floaty floaty-1">💖</span>
+        <span class="floaty floaty-2">⭐</span>
+        <span class="floaty floaty-3">✨</span>
+        <span class="floaty floaty-4">🎮</span>
+      </div>
+
+      <div class="hero-text">
+        <p class="hero-badge">👾 HELLO WORLD !</p>
+        <h1 class="hero-title">
+          嗨，我是 <span class="hl">Ming</span>
+          <span class="wave">👋</span>
+        </h1>
+        <p class="hero-sub">
+          会写代码的 <em class="hl-2">设计师</em>，<br />
+          也是会画画的 <em class="hl-3">程序员</em>。
+        </p>
+
+        <p class="hero-typing">
+          <span class="prompt">&gt;</span>
+          <span id="typed"></span><span class="caret" aria-hidden="true"></span>
+        </p>
+
+        <div class="hero-actions">
+          <a href="#works"   class="btn btn-primary">看看作品 🎨</a>
+          <a href="#contact" class="btn btn-ghost">聊聊天 💬</a>
+        </div>
+
+        <ul class="hero-stats">
+          <li><strong>5+</strong><span>年敲代码</span></li>
+          <li><strong>30+</strong><span>个小项目</span></li>
+          <li><strong>∞</strong><span>杯冰美式</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <a href="#about" class="scroll-hint" aria-label="向下滚动">
+      <span>向下滚动</span>
+      <i>↓</i>
+    </a>
+  </section>
+
+  <!-- ========== 跑马灯小装饰 ========== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>✦ 会写代码 ✦ 会画插画 ✦ 喜欢可爱的东西 ✦ 相信好看能治百病 ✦ 目前在接单 ✦ 欢迎来玩 ✦</span>
+      <span>✦ 会写代码 ✦ 会画插画 ✦ 喜欢可爱的东西 ✦ 相信好看能治百病 ✦ 目前在接单 ✦ 欢迎来玩 ✦</span>
+    </div>
+  </div>
+
+  <!-- ========== 关于我 ========== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="title-label">ABOUT ME</span>
+        <h2 class="title-main">关于我</h2>
+        <p class="title-sub">一点点自我介绍，了解一下～</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="note-card reveal" style="--d:0ms">
+          <span class="note-pin">📌</span>
+          <p>我是 <strong>Ming</strong>，一个在「代码」和「画笔」之间反复横跳的人。</p>
+          <p>白天写前端，把想法一点点搭成能点、能动的界面；<br />晚上画画，把界面又变成软乎乎的插画。</p>
+          <p>喜欢把复杂的东西做得简单又可爱，<br />也相信：<em>好看的界面，真的会让人心情变好。</em></p>
+          <p class="note-sign">— 很高兴认识你 :)</p>
+        </div>
+
+        <ul class="fact-list">
+          <li class="fact reveal" style="--d:60ms">
+            <span class="fact-ico">📍</span>
+            <div><strong>坐标</strong><span>地球某个角落</span></div>
+          </li>
+          <li class="fact reveal" style="--d:120ms">
+            <span class="fact-ico">💼</span>
+            <div><strong>状态</strong><span>接单 &amp; 学习中</span></div>
+          </li>
+          <li class="fact reveal" style="--d:180ms">
+            <span class="fact-ico">☕</span>
+            <div><strong>燃料</strong><span>冰美式 ×3 / 天</span></div>
+          </li>
+          <li class="fact reveal" style="--d:240ms">
+            <span class="fact-ico">🐱</span>
+            <div><strong>猫猫</strong><span>一只叫「布丁」的橘猫</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 技能 ========== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="title-label">SKILLS</span>
+        <h2 class="title-main">技能点</h2>
+        <p class="title-sub">还在升级，经验条在慢慢涨 📈</p>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill-card reveal" style="--d:0ms">
+          <div class="skill-head">
+            <span class="skill-ico">🧩</span>
+            <h3>HTML / CSS</h3>
+            <span class="skill-lv">Lv.95</span>
+          </div>
+          <div class="pixel-bar"><span style="--w:95%; --c:var(--pink-deep)"></span></div>
+          <p class="skill-desc">布局、动画、响应式都不在话下，抠像素也能抠一天。</p>
+        </article>
+
+        <article class="skill-card reveal" style="--d:60ms">
+          <div class="skill-head">
+            <span class="skill-ico">⚡</span>
+            <h3>JavaScript</h3>
+            <span class="skill-lv">Lv.90</span>
+          </div>
+          <div class="pixel-bar"><span style="--w:90%; --c:var(--amber)"></span></div>
+          <p class="skill-desc">原生 JS 也能玩得很花，喜欢做各种小交互和动效。</p>
+        </article>
+
+        <article class="skill-card reveal" style="--d:120ms">
+          <div class="skill-head">
+            <span class="skill-ico">🎨</span>
+            <h3>UI 设计 / Figma</h3>
+            <span class="skill-lv">Lv.88</span>
+          </div>
+          <div class="pixel-bar"><span style="--w:88%; --c:var(--mint-deep)"></span></div>
+          <p class="skill-desc">从线框到高保真，顺手还能建一套设计规范。</p>
+        </article>
+
+        <article class="skill-card reveal" style="--d:180ms">
+          <div class="skill-head">
+            <span class="skill-ico">✏️</span>
+            <h3>插画 / Procreate</h3>
+            <span class="skill-lv">Lv.82</span>
+          </div>
+          <div class="pixel-bar"><span style="--w:82%; --c:var(--violet)"></span></div>
+          <p class="skill-desc">画可爱的小角色和贴纸，偶尔做成表情包自用。</p>
+        </article>
+
+        <article class="skill-card reveal" style="--d:240ms">
+          <div class="skill-head">
+            <span class="skill-ico">🐍</span>
+            <h3>Python</h3>
+            <span class="skill-lv">Lv.75</span>
+          </div>
+          <div class="pixel-bar"><span style="--w:75%; --c:var(--mint-mid)"></span></div>
+          <p class="skill-desc">爬虫、脚本、数据处理，能自动化的事绝不手动干。</p>
+        </article>
+
+        <article class="skill-card reveal" style="--d:300ms">
+          <div class="skill-head">
+            <span class="skill-ico">🎮</span>
+            <h3>小游戏 / Canvas</h3>
+            <span class="skill-lv">Lv.60</span>
+          </div>
+          <div class="pixel-bar"><span style="--w:60%; --c:var(--pink-mid)"></span></div>
+          <p class="skill-desc">正在学习中，目标是做出自己的像素小游戏。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 作品 ========== -->
+  <section class="section" id="works">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="title-label">WORKS</span>
+        <h2 class="title-main">我的作品</h2>
+        <p class="title-sub">都是一些可可爱爱的小东西 🍬</p>
+      </div>
+
+      <div class="works-grid">
+        <article class="work-card reveal" style="--d:0ms; --tint:var(--pink-soft)">
+          <div class="work-thumb"><span>🍰</span><i class="grid"></i></div>
+          <h3>甜点日记</h3>
+          <p>记录每天吃到的甜点，顺便长胖。</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JS</li></ul>
+        </article>
+
+        <article class="work-card reveal" style="--d:70ms; --tint:var(--mint-soft)">
+          <div class="work-thumb"><span>🐱</span><i class="grid"></i></div>
+          <h3>撸猫计时器</h3>
+          <p>番茄钟 + 猫咪养成，摸鱼也要有仪式感。</p>
+          <ul class="tags"><li>Vue</li><li>Canvas</li></ul>
+        </article>
+
+        <article class="work-card reveal" style="--d:140ms; --tint:#FFF3D6">
+          <div class="work-thumb"><span>🌈</span><i class="grid"></i></div>
+          <h3>配色小铺</h3>
+          <p>一键生成可爱的配色方案，直接复制色值。</p>
+          <ul class="tags"><li>JS</li><li>色彩</li></ul>
+        </article>
+
+        <article class="work-card reveal" style="--d:210ms; --tint:#EADFFF">
+          <div class="work-thumb"><span>🎮</span><i class="grid"></i></div>
+          <h3>像素冒险</h3>
+          <p>8-bit 风格的小游戏，跳跃、吃金币、躲怪物。</p>
+          <ul class="tags"><li>Canvas</li><li>像素</li></ul>
+        </article>
+
+        <article class="work-card reveal" style="--d:280ms; --tint:var(--pink-soft)">
+          <div class="work-thumb"><span>📮</span><i class="grid"></i></div>
+          <h3>悄悄话信箱</h3>
+          <p>匿名留言板，把想说的话偷偷投进去。</p>
+          <ul class="tags"><li>Node.js</li><li>API</li></ul>
+        </article>
+
+        <article class="work-card reveal" style="--d:350ms; --tint:var(--mint-soft)">
+          <div class="work-thumb"><span>🍜</span><i class="grid"></i></div>
+          <h3>今晚吃啥</h3>
+          <p>随机菜谱生成器，专治选择困难症。</p>
+          <ul class="tags"><li>React</li><li>API</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 日常 / 爱好 ========== -->
+  <section class="section" id="hobbies">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="title-label">DAILY LIFE</span>
+        <h2 class="title-main">日常爱好</h2>
+        <p class="title-sub">不写代码的时候，我在干嘛？</p>
+      </div>
+
+      <div class="hobby-grid">
+        <div class="hobby reveal" style="--d:0ms"><span>🎮</span><h3>打游戏</h3><p>像素 &amp; 独立游戏爱好者</p></div>
+        <div class="hobby reveal" style="--d:50ms"><span>🎨</span><h3>画画</h3><p>可爱角色 &amp; 贴纸</p></div>
+        <div class="hobby reveal" style="--d:100ms"><span>☕</span><h3>手冲咖啡</h3><p>在家搞咖啡小实验</p></div>
+        <div class="hobby reveal" style="--d:150ms"><span>🐱</span><h3>撸猫</h3><p>布丁的专属铲屎官</p></div>
+        <div class="hobby reveal" style="--d:200ms"><span>📚</span><h3>看漫画</h3><p>最近在补经典老番</p></div>
+        <div class="hobby reveal" style="--d:250ms"><span>🎵</span><h3>听歌</h3><p>写代码时的固定背景音</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 联系 ========== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="title-label">CONTACT</span>
+        <h2 class="title-main">联系我</h2>
+        <p class="title-sub">有有趣的项目？想交个朋友？都可以找我～</p>
+      </div>
+
+      <div class="contact-box reveal">
+        <div class="mailbox">📮</div>
+        <p class="contact-lead">把想说的话「投递」给我吧</p>
+
+        <a class="btn btn-primary btn-mail" href="mailto:ming@example.com">
+          ming@example.com
+        </a>
+
+        <ul class="socials">
+          <li><a href="#" class="social" aria-label="GitHub">🐙<span>GitHub</span></a></li>
+          <li><a href="#" class="social" aria-label="微博">🧣<span>微博</span></a></li>
+          <li><a href="#" class="social" aria-label="B站">📺<span>B 站</span></a></li>
+          <li><a href="#" class="social" aria-label="小红书">📕<span>小红书</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========== 页脚 ========== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <p class="footer-cute">谢谢你看完我的一整个网站 💖</p>
+    <p class="footer-meta">© 2026 Ming · 用 HTML / CSS / JS 手搓而成</p>
+    <p class="footer-meta">Made with 💗 &amp; 一点点的强迫症</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+
+<!-- ========== 小助手 · 悬浮聊天 ========== -->
+<div class="chat-teaser" id="chatTeaser" hidden>要不要聊两句？👋</div>
+
+<button class="chat-fab" id="chatFab" aria-label="打开小助手" aria-expanded="false" aria-controls="chatPanel">
+  <span aria-hidden="true">🤖</span>
+  <span class="chat-fab-dot" aria-hidden="true"></span>
+</button>
+
+<section class="chat-panel" id="chatPanel" aria-hidden="true" aria-label="小助手对话">
+  <header class="chat-head">
+    <span class="chat-avatar" aria-hidden="true">🤖</span>
+    <div class="chat-id">
+      <strong id="chatName">小助手</strong>
+      <span id="chatStatus">在线 · 随时来聊</span>
+    </div>
+    <button class="chat-icon-btn" id="chatReset" type="button" title="开始新对话" aria-label="开始新对话">⟳</button>
+    <button class="chat-icon-btn" id="chatClose" type="button" title="收起" aria-label="收起对话">✕</button>
+  </header>
+
+  <div class="chat-log" id="chatLog" role="log"></div>
+
+  <div class="chat-starters" id="chatStarters"></div>
+
+  <form class="chat-form" id="chatForm">
+    <input class="chat-input" id="chatInput" type="text" autocomplete="off"
+           enterkeyhint="send" maxlength="500" placeholder="说点什么吧…"
+           aria-label="输入消息" />
+    <button class="chat-send" id="chatSend" type="submit" aria-label="发送">➤</button>
+  </form>
+</section>
+
+<script src="js/main.js"></script>
+<script src="js/chat.js"></script>
+</body>
+</html>

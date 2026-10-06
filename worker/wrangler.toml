@@ -1,0 +1,13 @@
+name = "dify-proxy"
+main = "dify-proxy.js"
+compatibility_date = "2026-09-01"
+
+# 启用 *.workers.dev 免费子域名（部署后会给你一个网址）
+workers_dev = true
+
+# API Key 不要写在这里！用命令存成加密变量：
+#   npx wrangler secret put DIFY_API_KEY
+#
+# 想用明文变量（不推荐）才取消下面注释：
+# [vars]
+# DIFY_API_KEY = "app-xxxx"
